@@ -116,7 +116,7 @@ function Form() {
     });
 
     try {
-      const response = await axios.post("http://localhost:3000/submit", form, {
+      const response = await axios.post("https://formbackend-2b7a.onrender.com/submit", form, {
         headers: {
           "Content-Type": "multipart/form-data",
         },
@@ -144,7 +144,7 @@ function Form() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await axios.get("http://localhost:3000/getFormdata");
+        const res = await axios.get("https://formbackend-2b7a.onrender.com/getFormdata");
         console.log("Response:", res.data.data);
 
         setTableData(Array.isArray(res.data.data) ? res.data.data : []);
