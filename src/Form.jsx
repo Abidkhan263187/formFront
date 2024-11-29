@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 
-
-
 function Form() {
   const [formData, setFormData] = useState({
     firstName: "",
@@ -37,8 +35,6 @@ function Form() {
     }
   };
 
-
-
   const handleImageChange = (index, e) => {
     const { name, value } = e.target;
     const updatedImages = [...formData.documents];
@@ -48,8 +44,6 @@ function Form() {
       documents: updatedImages,
     }));
   };
-
-
 
   const handleFileChange = (index, e) => {
     const updatedImages = [...formData.documents];
@@ -116,11 +110,15 @@ function Form() {
     });
 
     try {
-      const response = await axios.post("https://formbackend-2b7a.onrender.com/submit", form, {
-        headers: {
-          "Content-Type": "multipart/form-data",
-        },
-      });
+      const response = await axios.post(
+        "https://formbackend-2b7a.onrender.com/submit",
+        form,
+        {
+          headers: {
+            "Content-Type": "multipart/form-data",
+          },
+        }
+      );
       setFormData({
         firstName: "",
         lastName: "",
@@ -144,7 +142,9 @@ function Form() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await axios.get("https://formbackend-2b7a.onrender.com/getFormdata");
+        const res = await axios.get(
+          "https://formbackend-2b7a.onrender.com/getFormdata"
+        );
         console.log("Response:", res.data.data);
 
         setTableData(Array.isArray(res.data.data) ? res.data.data : []);
@@ -386,8 +386,9 @@ function Form() {
                 <td>{row.firstName}</td>
                 <td>{row.lastName}</td>
                 <td>{row.dateOfBirth.split("T")[0]}</td>
-                <td>{"Amritsar"} </td>
-                <td>{"Punjab"} </td>
+                <td>{row.residentialAddress.street1}</td>
+                <td>{row.residentialAddress.street2}</td>
+
                 <td>
                   {row.documents && row.documents.length > 0
                     ? row.documents.map((doc, docIndex) => (
