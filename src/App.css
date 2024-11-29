@@ -1,0 +1,115 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+td,
+th {
+  border: 1px solid;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+#inner {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  width: 45% !important;
+}
+#form {
+  width: 50%;
+  margin: auto;
+}
+#form > div {
+  margin-top: 1rem !important;
+}
+
+#form > div {
+  display: flex;
+
+  justify-content: space-between;
+}
+
+#sixth {
+  display: flex;
+
+  flex-direction: column;
+  justify-content: space-between;
+  width: 50%;
+  align-items: center;
+  margin: auto;
+}
+
+#form > div input {
+  padding: 10px;
+  margin-top: 5px;
+}
+select {
+  padding: 10px;
+  margin-top: 5px;
+}
+table {
+  width: 80% !important;
+  margin: 5% auto !important;
+}
+#upload_document {
+  border: 1px solid brown;
+  display: flex !important;
+}
+h3 {
+  text-align: start;
+  display: block;
+}
+
+#submit {
+  margin-top: 1rem;
+  padding: 15px 5px;
+  width: 200px;
+  font-size: large;
+  background-color: black;
+  color: white !important;
+  border-radius: 5px;
+}
+
+#updiv {
+  text-align: start;
+}
+
+label {
+  color: rgb(68, 68, 68) !important;
+  font-weight: 600;
+}
+span {
+  margin-top: 5px !important;
+}
